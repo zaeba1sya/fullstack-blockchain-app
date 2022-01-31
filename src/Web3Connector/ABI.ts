@@ -2,280 +2,183 @@ import AbiItem from 'web3';
 
 export const abi: any = [
 	{
-		"constant": true,
 		"inputs": [],
-		"name": "name",
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "addressToAdminId",
 		"outputs": [
 			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "login",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "password",
+				"type": "string"
+			}
+		],
+		"name": "firstLogin",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
 				"name": "",
 				"type": "string"
 			}
 		],
-		"payable": false,
+		"name": "loginToAddress",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
 		"stateMutability": "view",
 		"type": "function"
 	},
 	{
-		"constant": false,
 		"inputs": [
 			{
-				"name": "guy",
+				"internalType": "string",
+				"name": "login",
+				"type": "string"
+			},
+			{
+				"internalType": "address",
+				"name": "addr",
 				"type": "address"
 			},
 			{
-				"name": "wad",
-				"type": "uint256"
-			}
-		],
-		"name": "approve",
-		"outputs": [
-			{
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "totalSupply",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "src",
-				"type": "address"
+				"internalType": "string",
+				"name": "fio",
+				"type": "string"
 			},
 			{
-				"name": "dst",
-				"type": "address"
+				"internalType": "string",
+				"name": "password",
+				"type": "string"
 			},
 			{
-				"name": "wad",
-				"type": "uint256"
-			}
-		],
-		"name": "transferFrom",
-		"outputs": [
-			{
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "wad",
-				"type": "uint256"
-			}
-		],
-		"name": "withdraw",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "decimals",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint8"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"name": "balanceOf",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "symbol",
-		"outputs": [
-			{
-				"name": "",
+				"internalType": "string",
+				"name": "authCode",
 				"type": "string"
 			}
 		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "dst",
-				"type": "address"
-			},
-			{
-				"name": "wad",
-				"type": "uint256"
-			}
-		],
-		"name": "transfer",
-		"outputs": [
-			{
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"payable": false,
+		"name": "registerUser",
+		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
-		"constant": false,
-		"inputs": [],
-		"name": "deposit",
-		"outputs": [],
-		"payable": true,
-		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"constant": true,
 		"inputs": [
 			{
-				"name": "",
-				"type": "address"
+				"internalType": "string",
+				"name": "login",
+				"type": "string"
 			},
 			{
-				"name": "",
-				"type": "address"
+				"internalType": "string",
+				"name": "authCode",
+				"type": "string"
 			}
 		],
-		"name": "allowance",
+		"name": "tryLogin",
 		"outputs": [
 			{
+				"components": [
+					{
+						"internalType": "string",
+						"name": "login",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "addr",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "fio",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "role",
+						"type": "string"
+					}
+				],
+				"internalType": "struct WSR.UserInfo",
 				"name": "",
-				"type": "uint256"
+				"type": "tuple"
 			}
 		],
-		"payable": false,
 		"stateMutability": "view",
 		"type": "function"
 	},
 	{
-		"payable": true,
-		"stateMutability": "payable",
-		"type": "fallback"
-	},
-	{
-		"anonymous": false,
 		"inputs": [
 			{
-				"indexed": true,
-				"name": "src",
+				"internalType": "address",
+				"name": "",
 				"type": "address"
-			},
-			{
-				"indexed": true,
-				"name": "guy",
-				"type": "address"
-			},
-			{
-				"indexed": false,
-				"name": "wad",
-				"type": "uint256"
 			}
 		],
-		"name": "Approval",
-		"type": "event"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
+		"name": "usersInfo",
+		"outputs": [
 			{
-				"indexed": true,
-				"name": "src",
+				"internalType": "string",
+				"name": "login",
+				"type": "string"
+			},
+			{
+				"internalType": "address",
+				"name": "addr",
 				"type": "address"
 			},
 			{
-				"indexed": true,
-				"name": "dst",
-				"type": "address"
+				"internalType": "string",
+				"name": "fio",
+				"type": "string"
 			},
 			{
-				"indexed": false,
-				"name": "wad",
-				"type": "uint256"
+				"internalType": "string",
+				"name": "role",
+				"type": "string"
 			}
 		],
-		"name": "Transfer",
-		"type": "event"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": true,
-				"name": "dst",
-				"type": "address"
-			},
-			{
-				"indexed": false,
-				"name": "wad",
-				"type": "uint256"
-			}
-		],
-		"name": "Deposit",
-		"type": "event"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": true,
-				"name": "src",
-				"type": "address"
-			},
-			{
-				"indexed": false,
-				"name": "wad",
-				"type": "uint256"
-			}
-		],
-		"name": "Withdrawal",
-		"type": "event"
+		"stateMutability": "view",
+		"type": "function"
 	}
 ]

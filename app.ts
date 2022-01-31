@@ -1,5 +1,5 @@
 import express from 'express';
-import {Application} from 'express';
+import { Application } from 'express';
 
 class App {
   app: Application;
