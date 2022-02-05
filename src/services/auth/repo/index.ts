@@ -30,4 +30,8 @@ export default class AuthRepo {
   signInSecond = async (config: { login: string; authCode: string }) => {
     return await this.Contract.tryLogin(config.login, config.authCode).call();
   };
+
+  getUserData = async (config: { address: string }) => {
+    return await this.Contract.usersInfo(config.address).call();
+  };
 }

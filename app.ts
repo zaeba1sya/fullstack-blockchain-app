@@ -16,13 +16,11 @@ class App {
     middleWares.forEach((middleWare: any) => {
       this.app.use(middleWare);
     });
-    this.app.set("views", "./src/views");
-    this.app.set("view engine", "pug");
   }
 
   routes(routes: any) {
     routes.forEach((controller: any) => {
-      this.app.use("/", controller.router);
+      this.app.use("/api", controller.router);
     });
   }
 

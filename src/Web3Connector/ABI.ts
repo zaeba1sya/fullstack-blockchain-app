@@ -1,5 +1,3 @@
-import AbiItem from 'web3';
-
 export const abi: any = [
 	{
 		"inputs": [],
@@ -14,7 +12,7 @@ export const abi: any = [
 				"type": "address"
 			}
 		],
-		"name": "addressToAdminId",
+		"name": "addressToShopId",
 		"outputs": [
 			{
 				"internalType": "uint256",
@@ -23,6 +21,58 @@ export const abi: any = [
 			}
 		],
 		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "role",
+				"type": "string"
+			}
+		],
+		"name": "changeRole",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "login",
+				"type": "string"
+			}
+		],
+		"name": "createAdmin",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "login",
+				"type": "string"
+			}
+		],
+		"name": "createShop",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "login",
+				"type": "string"
+			}
+		],
+		"name": "decreaseSeller",
+		"outputs": [],
+		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
@@ -44,6 +94,41 @@ export const abi: any = [
 				"internalType": "address",
 				"name": "",
 				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getAdminList",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "string",
+						"name": "login",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "addr",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "fio",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "role",
+						"type": "string"
+					}
+				],
+				"internalType": "struct WSR.UserInfo[]",
+				"name": "",
+				"type": "tuple[]"
 			}
 		],
 		"stateMutability": "view",
@@ -145,6 +230,19 @@ export const abi: any = [
 			}
 		],
 		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "login",
+				"type": "string"
+			}
+		],
+		"name": "updateBuyer",
+		"outputs": [],
+		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
